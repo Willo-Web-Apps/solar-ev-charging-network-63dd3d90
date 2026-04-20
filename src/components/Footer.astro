@@ -1,11 +1,56 @@
 ---
 const year = new Date().getFullYear();
 ---
-<footer class="border-t border-surface-200 py-10 mt-auto">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <p class="text-sm font-semibold text-surface-900 font-display">Your New Business</p>
-      <p class="text-sm text-surface-800/50">&copy; {year} Your New Business. All rights reserved.</p>
+<footer class="bg-green-950 text-surface-200 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+      <!-- Brand -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2.5">
+          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-500">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M9 1L3 9h5l-1 6 6-8H8l1-6z" fill="white" stroke="white" stroke-width="0.3" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="text-xl font-bold text-white font-display">Solva</span>
+        </div>
+        <p class="text-sm text-surface-300/80 leading-relaxed max-w-xs">
+          Solar energy. Zero emissions.<br/>Wherever you park.
+        </p>
+        <p class="text-xs text-surface-300/50">Bogotá · Medellín · Colombia</p>
+      </div>
+
+      <!-- Links -->
+      <div class="grid grid-cols-2 gap-8">
+        <div class="space-y-3">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-surface-300/50">Conductores</h3>
+          <ul class="space-y-2 text-sm text-surface-300/70">
+            <li><a href="#como-funciona" class="hover:text-white transition-colors">Cómo funciona</a></li>
+            <li><a href="#red" class="hover:text-white transition-colors">La red</a></li>
+            <li><a href="#cta" class="hover:text-white transition-colors">Descarga la app</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-surface-300/50">Propietarios</h3>
+          <ul class="space-y-2 text-sm text-surface-300/70">
+            <li><a href="#socios" class="hover:text-white transition-colors">Sé socio</a></li>
+            <li><a href="#socios" class="hover:text-white transition-colors">Modelo de ingresos</a></li>
+            <li><a href="#cta" class="hover:text-white transition-colors">Contáctanos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-surface-300/50">Contacto</h3>
+        <a href="mailto:hola@solva.co" class="text-sm text-brand-400 hover:text-brand-300 transition-colors font-medium">hola@solva.co</a>
+        <p class="text-sm text-surface-300/60">Disponible en Bogotá y Medellín</p>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-surface-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-surface-300/40">&copy; {year} Solva Technologies SAS. Todos los derechos reservados.</p>
+      <p class="text-xs text-surface-300/40">Cargando Colombia con energía solar ☀️</p>
     </div>
   </div>
 </footer>

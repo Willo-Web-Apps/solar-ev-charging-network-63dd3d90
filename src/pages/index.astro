@@ -1,35 +1,579 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Your New Business" description="I want to build an electric car super chargers in Medellín and bogota where the chargers are charged by sun panels like byd makes and I can partner with parking lots and commercial buildings with an app - there is a shortage here">
-  <!-- Hero — the Product Agent will replace this entire page -->
-  <section class="relative min-h-[80vh] flex items-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 via-surface-50 to-brand-500/10"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-surface-900 font-display max-w-4xl mx-auto leading-[1.1] animate-slide-up">
-        Your New Business
-      </h1>
-      <p class="mt-6 text-lg md:text-xl text-surface-800/60 max-w-2xl mx-auto leading-relaxed animate-slide-up delay-100">
-        I want to build an electric car super chargers in Medellín and bogota where the chargers are charged by sun panels like byd makes and I can partner with parking lots and commercial buildings with an app - there is a shortage here
+<Base
+  title="Solva — Red de Carga Solar para Vehículos Eléctricos en Colombia"
+  description="Solva instala cargadores rápidos con energía solar en parqueaderos y edificios comerciales en Bogotá y Medellín. Encuentra, reserva y carga en minutos desde la app."
+>
+
+  <!-- ============================================================
+       HERO — Solar light, morning on a Medellín hillside
+       ============================================================ -->
+  <section class="hero-grain relative min-h-[92vh] flex items-center overflow-hidden" style="
+    background:
+      radial-gradient(ellipse 80% 70% at 95% -10%, oklch(0.76 0.15 75 / 0.28) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 50% at 85% 30%,  oklch(0.82 0.13 75 / 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 80% at 5%  90%,  oklch(0.32 0.10 148 / 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 30% 70%,  oklch(0.52 0.12 148 / 0.12) 0%, transparent 50%),
+      linear-gradient(168deg, oklch(0.985 0.010 85) 0%, oklch(0.970 0.018 80) 40%, oklch(0.955 0.022 100) 100%);
+  ">
+    <!-- Dot grid pattern — subtle depth -->
+    <div class="absolute inset-0 z-0" style="
+      background-image: radial-gradient(circle at 1.5px 1.5px, oklch(0.32 0.10 148 / 0.07) 1px, transparent 0);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    "></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- Left: Copy -->
+        <div>
+          <!-- Label pill -->
+          <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/25 text-green-950 text-xs font-semibold tracking-widest uppercase px-3.5 py-1.5 rounded-full mb-8 animate-fade-in">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block animate-pulse"></span>
+            Bogotá · Medellín · 2026
+          </div>
+
+          <h1 class="font-display text-5xl md:text-6xl lg:text-[4.25rem] font-black leading-[1.04] tracking-tight text-green-950 animate-slide-up">
+            Colombia's Solar<br/>
+            <em class="not-italic text-brand-500">Supercharger</em><br/>
+            Network Is Finally Here
+          </h1>
+
+          <p class="mt-6 text-lg md:text-xl text-green-950/60 font-body font-light max-w-xl leading-relaxed animate-slide-up delay-100">
+            Solva installs solar-powered fast chargers in parking lots and commercial buildings — find, book, and charge in minutes via the app.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3 animate-slide-up delay-200">
+            <a href="#cta" class="inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base px-7 py-3.5 rounded-full transition-colors duration-150 shadow-md shadow-brand-500/30">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2L4 10h4.5l-.5 6 5.5-8H9l.5-6z" fill="currentColor"/></svg>
+              Descarga la app gratis
+            </a>
+            <a href="#socios" class="inline-flex items-center justify-center gap-2 border border-green-950/20 bg-white/70 backdrop-blur-sm hover:bg-white text-green-950 font-semibold text-base px-7 py-3.5 rounded-full transition-colors duration-150">
+              Tengo un parqueadero
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M10 5l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <p class="mt-4 text-xs text-green-950/40 animate-slide-up delay-300">Sin tarjeta de crédito · Carga en minutos · 100% solar</p>
+        </div>
+
+        <!-- Right: Visual card — charging station mockup -->
+        <div class="relative flex justify-center lg:justify-end animate-scale-in delay-200">
+          <!-- Main card -->
+          <div class="relative w-full max-w-sm bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl shadow-green-950/15 border border-surface-200/80 overflow-hidden">
+
+            <!-- Solar canopy header -->
+            <div class="bg-green-950 px-6 pt-6 pb-10 relative overflow-hidden">
+              <div class="absolute inset-0" style="
+                background:
+                  radial-gradient(ellipse 80% 60% at 100% 0%, oklch(0.76 0.15 75 / 0.3) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 80% at 0% 100%, oklch(0.32 0.10 148 / 0.4) 0%, transparent 60%);
+              "></div>
+              <div class="relative z-10 flex items-center justify-between mb-4">
+                <span class="text-white/60 text-xs font-medium tracking-wider uppercase">Estación Solva</span>
+                <span class="flex items-center gap-1.5 text-xs font-semibold text-brand-400">
+                  <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+                  Disponible
+                </span>
+              </div>
+              <!-- Big charge number -->
+              <div class="flex items-end gap-2 mt-2">
+                <span class="text-7xl font-black font-display text-white leading-none">50</span>
+                <div class="mb-2">
+                  <span class="text-brand-400 font-bold text-2xl">kW</span>
+                  <p class="text-white/50 text-xs mt-0.5">Fast Charge</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Station details -->
+            <div class="px-6 py-5 -mt-6 relative z-10">
+              <div class="bg-white rounded-2xl shadow-lg shadow-green-950/8 border border-surface-200/70 p-4 space-y-3">
+                <!-- Location -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5z" fill="oklch(0.38 0.10 148)"/><circle cx="8" cy="6" r="1.5" fill="white"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-semibold text-green-950">CC Andino, Bogotá</p>
+                    <p class="text-xs text-green-950/45">Parqueadero Nivel B1 · 8 estaciones</p>
+                  </div>
+                </div>
+
+                <!-- Stats row -->
+                <div class="grid grid-cols-3 gap-2 pt-1">
+                  <div class="bg-surface-100 rounded-xl p-2.5 text-center">
+                    <p class="text-base font-bold font-display text-green-950">28<span class="text-xs font-medium">min</span></p>
+                    <p class="text-[10px] text-green-950/45 mt-0.5">0 → 80%</p>
+                  </div>
+                  <div class="bg-brand-50 rounded-xl p-2.5 text-center">
+                    <p class="text-base font-bold font-display text-brand-600">☀️ 100%</p>
+                    <p class="text-[10px] text-green-950/45 mt-0.5">Solar</p>
+                  </div>
+                  <div class="bg-surface-100 rounded-xl p-2.5 text-center">
+                    <p class="text-base font-bold font-display text-green-950">$2.100</p>
+                    <p class="text-[10px] text-green-950/45 mt-0.5">por kWh</p>
+                  </div>
+                </div>
+
+                <!-- CTA inside card -->
+                <button class="w-full bg-green-950 hover:bg-green-900 text-white text-sm font-semibold py-3 rounded-xl transition-colors duration-150 flex items-center justify-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L2 8h4l-.5 5 5.5-7H7l.5-5z" fill="currentColor"/></svg>
+                  Reservar estación
+                </button>
+              </div>
+            </div>
+
+            <!-- Solar status bar -->
+            <div class="px-6 pb-5">
+              <div class="flex items-center justify-between text-xs text-green-950/50 mb-1.5">
+                <span>Carga solar hoy</span>
+                <span class="font-semibold text-green-700">142 kWh generados</span>
+              </div>
+              <div class="h-1.5 bg-surface-100 rounded-full overflow-hidden">
+                <div class="h-full w-4/5 rounded-full" style="background: linear-gradient(90deg, oklch(0.32 0.10 148) 0%, oklch(0.76 0.15 75) 100%);"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="absolute -top-4 -left-4 bg-white rounded-2xl shadow-lg shadow-green-950/10 border border-surface-200/70 px-3.5 py-2.5 flex items-center gap-2.5 animate-slide-up delay-400">
+            <span class="text-xl">🌿</span>
+            <div>
+              <p class="text-xs font-bold text-green-950">0 kg CO₂</p>
+              <p class="text-[10px] text-green-950/45">esta carga</p>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-2 -right-4 bg-white rounded-2xl shadow-lg shadow-green-950/10 border border-surface-200/70 px-3.5 py-2.5 flex items-center gap-2.5 animate-slide-up delay-500">
+            <span class="text-xl">⚡</span>
+            <div>
+              <p class="text-xs font-bold text-green-950">50 kW</p>
+              <p class="text-[10px] text-green-950/45">carga rápida DC</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOCIAL PROOF BAR — Metrics
+       ============================================================ -->
+  <section class="py-10 bg-green-950 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-surface-800/40">
+        <div class="text-center md:px-8">
+          <p class="text-4xl font-black font-display text-brand-400">+345%</p>
+          <p class="mt-1 text-sm text-surface-300/60 font-light">crecimiento de VE en Colombia<br/><span class="text-surface-300/40 text-xs">enero 2025</span></p>
+        </div>
+        <div class="text-center md:px-8">
+          <p class="text-4xl font-black font-display text-brand-400">84</p>
+          <p class="mt-1 text-sm text-surface-300/60 font-light">estaciones en Bogotá hoy<br/><span class="text-surface-300/40 text-xs">para toda la ciudad</span></p>
+        </div>
+        <div class="text-center md:px-8">
+          <p class="text-4xl font-black font-display text-brand-400">50 kW</p>
+          <p class="mt-1 text-sm text-surface-300/60 font-light">carga rápida por estación<br/><span class="text-surface-300/40 text-xs">0→80% en ~28 min</span></p>
+        </div>
+        <div class="text-center md:px-8">
+          <p class="text-4xl font-black font-display text-brand-400">100%</p>
+          <p class="mt-1 text-sm text-surface-300/60 font-light">energía solar + baterías<br/><span class="text-surface-300/40 text-xs">carga limpia, día y noche</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW IT WORKS — Cómo funciona (for drivers)
+       ============================================================ -->
+  <section id="como-funciona" class="py-24 md:py-32 bg-surface-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-4">Para conductores · Cómo funciona</p>
+        <h2 class="font-display text-4xl md:text-5xl font-black text-green-950 leading-tight">
+          Carga tu auto en el lugar donde<br/>
+          <span class="text-brand-500">ya ibas a estar.</span>
+        </h2>
+        <p class="mt-5 text-lg text-green-950/55 font-light leading-relaxed">
+          Olvídate de desvíos a gasolineras. Solva pone cargadores rápidos en los parqueaderos de los centros comerciales y edificios de oficinas donde ya pasas tu día.
+        </p>
+      </div>
+
+      <!-- Steps — asymmetric layout -->
+      <div class="mt-16 grid md:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- Step 1 -->
+        <div class="group relative bg-white rounded-3xl p-8 border border-surface-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+          <div class="w-12 h-12 rounded-2xl bg-brand-50 border border-brand-200/50 flex items-center justify-center mb-6">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="9" stroke="oklch(0.65 0.15 72)" stroke-width="1.5"/><path d="M8 11h6M11 8v6" stroke="oklch(0.65 0.15 72)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="absolute top-8 right-8 text-4xl font-black font-display text-surface-200">01</span>
+          <h3 class="text-xl font-bold font-display text-green-950 mb-3">Abre la app</h3>
+          <p class="text-base text-green-950/55 font-light leading-relaxed">
+            Busca la estación Solva más cercana a tu destino — parqueaderos de centros comerciales, oficinas y edificios residenciales en Bogotá y Medellín.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="group relative bg-white rounded-3xl p-8 border border-surface-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+          <div class="w-12 h-12 rounded-2xl bg-green-50 border border-green-200/50 flex items-center justify-center mb-6">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="3" y="5" width="16" height="12" rx="2" stroke="oklch(0.38 0.10 148)" stroke-width="1.5"/><path d="M7 5V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1" stroke="oklch(0.38 0.10 148)" stroke-width="1.5"/><path d="M11 9v4M9 11h4" stroke="oklch(0.38 0.10 148)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="absolute top-8 right-8 text-4xl font-black font-display text-surface-200">02</span>
+          <h3 class="text-xl font-bold font-display text-green-950 mb-3">Reserva tu slot</h3>
+          <p class="text-base text-green-950/55 font-light leading-relaxed">
+            Elige la hora, reserva un cargador y paga desde la app. Llega, conecta el cable, y la carga empieza automáticamente.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="group relative bg-white rounded-3xl p-8 border border-surface-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+          <div class="w-12 h-12 rounded-2xl bg-brand-50 border border-brand-200/50 flex items-center justify-center mb-6">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 3L5 12h5.5l-.5 7 6.5-10H12l.5-6z" fill="oklch(0.65 0.15 72)" stroke="none"/></svg>
+          </div>
+          <span class="absolute top-8 right-8 text-4xl font-black font-display text-surface-200">03</span>
+          <h3 class="text-xl font-bold font-display text-green-950 mb-3">Carga con el sol</h3>
+          <p class="text-base text-green-950/55 font-light leading-relaxed">
+            50 kW de carga rápida DC con energía 100% solar. De 0 a 80% en menos de 30 minutos — y gratis para el medio ambiente.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURES GRID — Asymmetric solar panel layout
+       ============================================================ -->
+  <section id="red" class="py-24 md:py-32 bg-surface-100/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-4">Tecnología Solva</p>
+        <h2 class="font-display text-4xl md:text-5xl font-black text-green-950 leading-tight">
+          Diseñado para Colombia.<br/>
+          <em class="not-italic text-brand-500">Impulsado por el sol.</em>
+        </h2>
+      </div>
+
+      <!-- Asymmetric grid: 1 large + 2 stacked + 1 wide bottom -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- Large feature card (2 cols) -->
+        <div class="md:col-span-2 relative overflow-hidden rounded-3xl bg-green-950 p-8 md:p-10 text-white min-h-[280px] flex flex-col justify-between" style="
+          background-image:
+            radial-gradient(ellipse 70% 60% at 100% 0%, oklch(0.76 0.15 75 / 0.25) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 80% at 0% 100%, oklch(0.32 0.10 148 / 0.6) 0%, transparent 60%);
+          background-color: oklch(0.18 0.06 148);
+        ">
+          <!-- Solar panel grid overlay -->
+          <div class="absolute inset-0 opacity-5" style="
+            background-image:
+              linear-gradient(oklch(1 0 0 / 1) 1px, transparent 1px),
+              linear-gradient(90deg, oklch(1 0 0 / 1) 1px, transparent 1px);
+            background-size: 40px 40px;
+          "></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-2xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center mb-6">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" fill="oklch(0.76 0.15 75)"/>
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="oklch(0.76 0.15 75)" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold font-display leading-snug mb-4">
+              Canopias solares + baterías.<br/>
+              <span class="text-brand-400">Carga limpia, incluso de noche.</span>
+            </h3>
+            <p class="text-white/60 font-light text-base leading-relaxed max-w-lg">
+              Cada estación Solva tiene su propia cubierta solar y banco de baterías integrado. La energía del sol se almacena durante el día para que puedas cargar a las 10pm con la misma electricidad verde generada a mediodía.
+            </p>
+          </div>
+          <div class="relative z-10 mt-6 flex items-center gap-4 text-sm text-white/50">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-brand-400"></span> Almacenamiento en baterías LFP</span>
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-green-400"></span> 0 emisiones garantizadas</span>
+          </div>
+        </div>
+
+        <!-- Right stack: 2 smaller cards -->
+        <div class="flex flex-col gap-5">
+
+          <!-- Card: App -->
+          <div class="relative overflow-hidden rounded-3xl bg-white border border-surface-200/80 p-7 flex-1 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <div class="w-10 h-10 rounded-xl bg-brand-50 border border-brand-200/50 flex items-center justify-center mb-4">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="4" y="1" width="12" height="18" rx="2" stroke="oklch(0.65 0.15 72)" stroke-width="1.5"/><circle cx="10" cy="16" r="1" fill="oklch(0.65 0.15 72)"/></svg>
+            </div>
+            <h3 class="text-lg font-bold font-display text-green-950 mb-2">App primero, siempre</h3>
+            <p class="text-sm text-green-950/55 font-light leading-relaxed">
+              Encuentra, reserva y paga desde tu celular. Notificaciones en tiempo real cuando tu carga termina.
+            </p>
+          </div>
+
+          <!-- Card: Network -->
+          <div class="relative overflow-hidden rounded-3xl bg-white border border-surface-200/80 p-7 flex-1 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <div class="w-10 h-10 rounded-xl bg-green-50 border border-green-200/50 flex items-center justify-center mb-4">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="oklch(0.38 0.10 148)" stroke-width="1.5"/><path d="M10 2C10 2 7 6 7 10s3 8 3 8M10 2c0 0 3 4 3 8s-3 8-3 8M2 10h16" stroke="oklch(0.38 0.10 148)" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="text-lg font-bold font-display text-green-950 mb-2">Red en expansión</h3>
+            <p class="text-sm text-green-950/55 font-light leading-relaxed">
+              5 estaciones en el primer año. Bogotá y Medellín primero — donde más EV hay y donde más se necesitan.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Wide bottom card: Speed + Compatibility -->
+        <div class="md:col-span-3 relative overflow-hidden rounded-3xl bg-white border border-surface-200/80 p-8 md:p-10 hover:shadow-md transition-all duration-200">
+          <div class="grid md:grid-cols-4 gap-8 items-center">
+            <div class="md:col-span-2">
+              <div class="w-10 h-10 rounded-xl bg-green-50 border border-green-200/50 flex items-center justify-center mb-4">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h4M10 4v4M16 10h-4M10 16v-4" stroke="oklch(0.38 0.10 148)" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="3" stroke="oklch(0.38 0.10 148)" stroke-width="1.5"/></svg>
+              </div>
+              <h3 class="text-xl font-bold font-display text-green-950 mb-2">Compatible con todos los VE del mercado colombiano</h3>
+              <p class="text-base text-green-950/55 font-light">Conectores CCS2 y CHAdeMO para BYD, KIA, Renault, Hyundai, Tesla y más.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:col-span-2">
+              {["BYD", "KIA", "Renault", "Hyundai"].map((brand) => (
+                <div class="flex flex-col items-center justify-center bg-surface-100/80 rounded-2xl py-4 px-3 text-center">
+                  <span class="text-sm font-bold text-green-950 font-display">{brand}</span>
+                  <span class="text-xs text-green-950/40 mt-0.5">Compatible</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PARTNER SECTION — Para propietarios
+       ============================================================ -->
+  <section id="socios" class="py-24 md:py-32 bg-surface-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left: Revenue model visual -->
+        <div class="relative order-2 lg:order-1">
+          <!-- Revenue card -->
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-green-950/12" style="
+            background: linear-gradient(135deg, oklch(0.32 0.10 148) 0%, oklch(0.18 0.06 148) 60%, oklch(0.22 0.07 100) 100%);
+          ">
+            <div class="p-8 md:p-10">
+              <p class="text-white/50 text-xs font-semibold uppercase tracking-widest mb-2">Modelo de ingresos</p>
+              <h3 class="text-3xl font-black font-display text-white mb-8">Tu estacionamiento<br/>empieza a generar.</h3>
+
+              <!-- Split bar -->
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="text-white/70 font-medium">Tu parte como socio</span>
+                    <span class="text-brand-400 font-bold text-lg">30%</span>
+                  </div>
+                  <div class="h-3 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full w-[30%] rounded-full bg-brand-500"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="text-white/70 font-medium">Solva (operación + mantenimiento)</span>
+                    <span class="text-white/60 font-bold text-lg">70%</span>
+                  </div>
+                  <div class="h-3 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full w-[70%] rounded-full bg-white/30"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 grid grid-cols-2 gap-4">
+                <div class="bg-white/8 rounded-2xl p-4">
+                  <p class="text-2xl font-black font-display text-white">$0</p>
+                  <p class="text-xs text-white/50 mt-1">inversión inicial para ti</p>
+                </div>
+                <div class="bg-white/8 rounded-2xl p-4">
+                  <p class="text-2xl font-black font-display text-brand-400">Llave en mano</p>
+                  <p class="text-xs text-white/50 mt-1">instalación y mantenimiento</p>
+                </div>
+              </div>
+
+              <!-- Example earning -->
+              <div class="mt-6 bg-brand-500/15 border border-brand-500/25 rounded-2xl p-4">
+                <p class="text-xs text-white/60 mb-1">Estimado mensual para 2 estaciones activas</p>
+                <p class="text-2xl font-black font-display text-brand-300">COP $2.1M – $4.5M</p>
+                <p class="text-xs text-white/40 mt-1">pasivo, sin que hagas nada</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating trust badge -->
+          <div class="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-lg shadow-green-950/10 border border-surface-200 p-4 flex items-center gap-3 max-w-xs">
+            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2l1.8 5.5H18l-4.8 3.5 1.8 5.5L10 13l-5 3.5 1.8-5.5L2 7.5h6.2L10 2z" fill="oklch(0.76 0.15 75)"/></svg>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-green-950">Sin riesgos para el socio</p>
+              <p class="text-xs text-green-950/45">Solva asume instalación y ops</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Copy -->
+        <div class="order-1 lg:order-2">
+          <p class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-4">Para propietarios · Sé socio</p>
+          <h2 class="font-display text-4xl md:text-5xl font-black text-green-950 leading-tight">
+            Convierte tu parqueadero<br/>
+            en una fuente de<br/>
+            <span class="text-brand-500">ingresos pasivos.</span>
+          </h2>
+          <p class="mt-6 text-lg text-green-950/55 font-light leading-relaxed">
+            Solva instala, opera y mantiene todo — tú solo nos das el espacio. A cambio, recibes el 30% de cada carga realizada. Sin inversión. Sin dolores de cabeza.
+          </p>
+
+          <ul class="mt-8 space-y-4">
+            {[
+              { icon: "✓", text: "Instalación 100% a cargo de Solva — cero costo para el propietario" },
+              { icon: "✓", text: "Mantenimiento preventivo y correctivo incluido en el acuerdo" },
+              { icon: "✓", text: "Dashboard en tiempo real: ingresos, kWh entregados, disponibilidad" },
+              { icon: "✓", text: "Atrae clientes de VE — un perfil de cliente premium" },
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-50 border border-green-200/50 flex items-center justify-center text-green-700 font-bold text-xs">{item.icon}</span>
+                <span class="text-base text-green-950/70 font-light">{item.text}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3">
+            <a href="#cta" class="inline-flex items-center justify-center gap-2 bg-green-950 hover:bg-green-900 text-white font-semibold text-base px-7 py-3.5 rounded-full transition-colors duration-150">
+              Quiero ser socio
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M10 5l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="mailto:socios@solva.co" class="inline-flex items-center justify-center gap-2 border border-green-950/20 text-green-950 hover:bg-surface-100 font-semibold text-base px-7 py-3.5 rounded-full transition-colors duration-150">
+              socios@solva.co
+            </a>
+          </div>
+          <p class="mt-3 text-xs text-green-950/35">Actualmente activo en Bogotá y Medellín</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY SOLVA — vs competitors
+       ============================================================ -->
+  <section class="py-24 md:py-28 bg-surface-100/60">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-4">Por qué Solva</p>
+        <h2 class="font-display text-4xl md:text-5xl font-black text-green-950">
+          No en gasolineras.<br/>
+          <span class="text-brand-500">Donde tú ya estás.</span>
+        </h2>
+      </div>
+
+      <div class="overflow-hidden rounded-3xl border border-surface-200/80 bg-white shadow-sm">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b border-surface-200/80">
+              <th class="text-left p-5 md:p-6 text-sm font-semibold text-green-950/40 w-2/5">Característica</th>
+              <th class="p-5 md:p-6 text-center">
+                <div class="inline-flex flex-col items-center gap-1">
+                  <span class="flex items-center gap-1.5 text-sm font-bold text-white bg-green-950 px-3 py-1 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-brand-400"></span>Solva
+                  </span>
+                </div>
+              </th>
+              <th class="p-5 md:p-6 text-center text-sm font-semibold text-surface-900/35">Terpel Voltex</th>
+              <th class="p-5 md:p-6 text-center text-sm font-semibold text-surface-900/35 hidden sm:table-cell">Otros</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-200/60">
+            {[
+              ["Ubicación", "Donde tú parqueas", "Gasolineras", "Variado"],
+              ["Energía", "100% solar + batería", "Red eléctrica", "Red eléctrica"],
+              ["Velocidad", "50 kW DC fast", "Varía", "Lento / varía"],
+              ["Reserva por app", "✓ Siempre", "Limitado", "✗ No"],
+              ["Costo al propietario", "$0 instalación", "No aplica", "Alta inversión"],
+            ].map(([feature, solva, terpel, otros]) => (
+              <tr class="hover:bg-surface-50/80 transition-colors">
+                <td class="p-5 md:p-6 text-sm text-green-950/60 font-medium">{feature}</td>
+                <td class="p-5 md:p-6 text-center text-sm font-semibold text-green-700">{solva}</td>
+                <td class="p-5 md:p-6 text-center text-sm text-surface-900/45">{terpel}</td>
+                <td class="p-5 md:p-6 text-center text-sm text-surface-900/45 hidden sm:table-cell">{otros}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA — Solar diagonal gradient, forest to sun
+       ============================================================ -->
+  <section id="cta" class="relative py-28 md:py-36 overflow-hidden">
+    <!-- Diagonal forest-to-amber gradient -->
+    <div class="absolute inset-0" style="
+      background:
+        radial-gradient(ellipse 60% 80% at 0% 100%, oklch(0.18 0.06 148 / 0.95) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 70% at 100% 0%,  oklch(0.76 0.15 75 / 0.55) 0%, transparent 55%),
+        linear-gradient(135deg, oklch(0.22 0.08 148) 0%, oklch(0.38 0.10 148) 35%, oklch(0.62 0.13 85) 70%, oklch(0.76 0.15 75) 100%);
+    "></div>
+    <!-- Grain -->
+    <div class="absolute inset-0 opacity-[0.04]" style="
+      background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);
+      mix-blend-mode: overlay;
+    "></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs font-semibold uppercase tracking-widest text-white/60 mb-6">Únete a la revolución eléctrica</p>
+      <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.04] mb-6">
+        El futuro de la movilidad<br/>
+        colombiana corre<br/>
+        <em class="not-italic text-brand-200">con el sol.</em>
+      </h2>
+      <p class="text-lg md:text-xl text-white/65 font-light max-w-xl mx-auto mb-10">
+        Sé de los primeros en registrarte. Lanzamos en Bogotá y Medellín en 2026.
       </p>
-      <div class="mt-10 animate-slide-up delay-200">
-        <a href="#cta" class="inline-block px-8 py-3.5 bg-brand-500 text-white font-semibold rounded-lg hover:bg-brand-600 transition-colors text-base">
-          Get Started
+
+      <!-- Email capture -->
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault();">
+        <input
+          type="email"
+          placeholder="tu@email.com"
+          class="flex-1 px-5 py-3.5 rounded-full bg-white/15 border border-white/30 text-white placeholder:text-white/40 text-sm font-medium focus:outline-none focus:border-white/60 backdrop-blur-sm transition-colors"
+          aria-label="Tu correo electrónico"
+        />
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center gap-2 bg-white hover:bg-surface-100 text-green-950 font-bold text-sm px-7 py-3.5 rounded-full transition-colors duration-150 shadow-lg shadow-green-950/20 flex-shrink-0"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1L3 8h4l-1 7 6-9H8l.5-5z" fill="currentColor"/></svg>
+          Quiero cargar con el sol
+        </button>
+      </form>
+      <p class="mt-4 text-xs text-white/35">Sin spam. Aviso de lanzamiento + oferta de early access.</p>
+
+      <!-- Dual audience links -->
+      <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
+        <a href="mailto:hola@solva.co" class="flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-150">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4z" stroke="currentColor" stroke-width="1.2"/><path d="M2 4l6 5 6-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Conductores: hola@solva.co
+        </a>
+        <span class="text-white/20 hidden sm:block">·</span>
+        <a href="mailto:socios@solva.co" class="flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-150">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 8h6M5 5.5h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Propietarios: socios@solva.co
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="cta" class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-2xl bg-brand-500 p-10 md:p-16 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white font-display">Ready to get started?</h2>
-        <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto">Get in touch and see what we can do for you.</p>
-        <a href="mailto:hello@example.com" class="mt-8 inline-block px-8 py-3.5 bg-white text-surface-900 font-semibold rounded-lg hover:bg-surface-100 transition-colors text-base">
-          Contact Us
-        </a>
-      </div>
-    </div>
-  </section>
 </Base>

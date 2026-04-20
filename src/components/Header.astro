@@ -1,11 +1,33 @@
 ---
 ---
-<header class="sticky top-0 z-50 border-b border-surface-200 bg-surface-50/80 backdrop-blur-lg">
+<header class="sticky top-0 z-50 border-b border-surface-200/60 bg-surface-50/90 backdrop-blur-lg">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="/" class="text-lg font-bold tracking-tight text-surface-900 font-display">Your New Business</a>
-    <div class="flex items-center gap-6">
-      <a href="/blog" class="text-sm font-medium text-surface-800/60 hover:text-surface-900 transition-colors">Blog</a>
-      <a href="#cta" class="text-sm font-semibold bg-brand-500 text-white px-4 py-2 rounded-lg hover:bg-brand-600 transition-colors">Get Started</a>
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <!-- Solar circle mark -->
+      <span class="relative flex items-center justify-center w-8 h-8 rounded-full bg-brand-500 shadow-sm group-hover:scale-105 transition-transform duration-200">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Lightning bolt = EV; sun rays = solar -->
+          <path d="M9 1L3 9h5l-1 6 6-8H8l1-6z" fill="white" stroke="white" stroke-width="0.3" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="text-xl font-bold tracking-tight text-green-950 font-display">Solva</span>
+    </a>
+
+    <!-- Nav links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#como-funciona" class="text-sm font-medium text-surface-900/60 hover:text-green-950 transition-colors duration-150">Cómo funciona</a>
+      <a href="#socios" class="text-sm font-medium text-surface-900/60 hover:text-green-950 transition-colors duration-150">Para socios</a>
+      <a href="#red" class="text-sm font-medium text-surface-900/60 hover:text-green-950 transition-colors duration-150">La red</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-3">
+      <a href="#cta" class="hidden sm:inline-flex text-sm font-medium text-green-950/70 hover:text-green-950 transition-colors duration-150">Descarga la app</a>
+      <a href="#socios" class="inline-flex items-center gap-1.5 text-sm font-semibold bg-green-950 text-surface-50 px-4 py-2 rounded-full hover:bg-green-900 transition-colors duration-150">
+        Soy propietario
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </nav>
 </header>
